@@ -7,12 +7,6 @@
       latest.url = "nixpkgs";
       digga.url = "github:divnix/digga/master";
 
-      ci-agent = {
-        url = "github:hercules-ci/hercules-ci-agent";
-        inputs = { nix-darwin.follows = "darwin"; nixos-20_09.follows = "nixos"; nixos-unstable.follows = "latest"; };
-      };
-      darwin.url = "github:LnL7/nix-darwin";
-      darwin.inputs.nixpkgs.follows = "latest";
       home.url = "github:nix-community/home-manager";
       home.inputs.nixpkgs.follows = "nixos";
       naersk.url = "github:nmattia/naersk";
@@ -72,7 +66,6 @@
           modules = ./modules/module-list.nix;
           externalModules = [
             { _module.args.ourLib = self.lib; }
-            ci-agent.nixosModules.agent-profile
             home.nixosModules.home-manager
             agenix.nixosModules.age
             ./modules/customBuilds.nix
@@ -83,14 +76,16 @@
         hosts = {
           /* set host specific properties here */
           NixOS = { };
+          "6xr" = { };
         };
         importables = rec {
           profiles = digga.lib.importers.rakeLeaves ./profiles // {
             users = digga.lib.importers.rakeLeaves ./users;
           };
           suites = with profiles; rec {
-            base = [ core users.nixos users.root ];
+            base = [ core users.coafin users.root ];
           };
+          ssh-keys = import ./ssh-keys.nix;
         };
       };
 

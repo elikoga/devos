@@ -1,5 +1,5 @@
-{ ... }:
+{ ssh-keys, ... }:
 # recommend using `hashedPassword`
 {
-  users.users.root.password = "";
+  users.users.root.openssh.authorizedKeys.keys = ssh-keys.root;
 }
