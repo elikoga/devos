@@ -74,7 +74,7 @@
         imports = [ (digga.lib.importers.hosts ./hosts) ];
         hosts = {
           /* set host specific properties here */
-          NixOS = { };
+          # NixOS = { };
           "sixr" = { };
         };
         importables = rec {
@@ -105,7 +105,11 @@
 
       homeConfigurations = digga.lib.mkHomeConfigurations self.nixosConfigurations;
 
-      deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations { };
+      deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations {
+        "sixr" = {
+          hostname = "6xr.de";
+        };
+      };
 
       defaultTemplate = self.templates.flk;
       templates.flk.path = ./.;
