@@ -15,6 +15,7 @@
   services.openssh.passwordAuthentication = true;
   networking.firewall.allowedTCPPorts = [ 22 80 443 ];
   networking.interfaces.ens18.useDHCP = true;
+  networking.hostName = "6xr.de";
 
   services.hydra.enable = true;
   services.hydra.hydraURL = "hydra.6xr.de";

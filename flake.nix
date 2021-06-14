@@ -105,11 +105,7 @@
 
       homeConfigurations = digga.lib.mkHomeConfigurations self.nixosConfigurations;
 
-      deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations {
-        "sixr" = {
-          hostname = "6xr.de";
-        };
-      };
+      deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations { };
 
       defaultTemplate = self.templates.flk;
       templates.flk.path = ./.;
