@@ -29,6 +29,15 @@
               add_header Set-Cookie $cookie;
             '';
           };
+          "/hydra" = { return = "301 /hydra/"; };
+          "/hydra/" = {
+            proxyPass = "http://localhost:3000";
+            extraConfig = ''
+              auth_request /sso-auth;
+              auth_request_set $cookie $upstream_http_set_cookie;
+              add_header Set-Cookie $cookie;
+            '';
+          };
           "/sso-auth" = {
             proxyPass = "http://localhost:8082/auth";
             extraConfig = ''

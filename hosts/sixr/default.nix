@@ -17,8 +17,9 @@
   networking.interfaces.ens18.useDHCP = true;
 
   services.hydra.enable = true;
-  services.hydra.hydraURL = "hydra.6xr.de";
+  services.hydra.hydraURL = "6xr.de/hydra";
   services.hydra.notificationSender = "hydra@6xr.de";
+  services.hydra.useSubstitutes = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
