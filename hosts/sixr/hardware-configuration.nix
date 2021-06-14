@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/profiles/qemu-guest.nix")
+    [
+      (modulesPath + "/profiles/qemu-guest.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_scsi" "sd_mod" ];
@@ -14,19 +15,20 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/6c387f9b-c333-4b2a-81d0-6c3f4305e905";
+    {
+      device = "/dev/disk/by-uuid/6c387f9b-c333-4b2a-81d0-6c3f4305e905";
       fsType = "btrfs";
     };
 
   boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/c76af51f-8581-4d84-9127-9fe61b2e0986";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8802b3d4-4faf-4d52-a151-10415ae9ac21";
+    {
+      device = "/dev/disk/by-uuid/8802b3d4-4faf-4d52-a151-10415ae9ac21";
       fsType = "ext4";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/e60604dc-6b22-4e87-9be4-b9e314f5f698"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/e60604dc-6b22-4e87-9be4-b9e314f5f698"; }];
 
 }

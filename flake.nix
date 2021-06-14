@@ -75,7 +75,7 @@
         hosts = {
           /* set host specific properties here */
           NixOS = { };
-          "6xr" = { };
+          "sixr" = { };
         };
         importables = rec {
           profiles = digga.lib.importers.rakeLeaves ./profiles // {

@@ -1,1 +1,3 @@
-[ ]
+[
+  ./override-revision.nix
+]
