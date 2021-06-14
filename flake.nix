@@ -104,7 +104,11 @@
 
       homeConfigurations = digga.lib.mkHomeConfigurations self.nixosConfigurations;
 
-      deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations { };
+      deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations {
+        sixr = {
+          ssh_user = "root";
+        };
+      };
 
       defaultTemplate = self.templates.flk;
       templates.flk.path = ./.;
