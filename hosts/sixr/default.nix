@@ -14,10 +14,25 @@
   services.openssh.enable = true;
   services.openssh.passwordAuthentication = true;
   networking.firewall.allowedTCPPorts = [ 22 80 443 ];
-  networking.interfaces.ens18.useDHCP = true;
+  networking.interfaces.ens18 = {
+    useDHCP = true;
+    ipv6 = {
+      addresses = [
+        {
+          address = "2a02:c206:3007:5893::1";
+          prefixLength = 64;
+        }
+      ];
+      routes = [
+        {
+          via = "fe80::1";
+        }
+      ];
+    };
+  };
 
   services.hydra.enable = true;
-  services.hydra.hydraURL = "https://6xr.de/hydra";
+  services.hydra.hydraURL = "https://hydra.6xr.de";
   services.hydra.notificationSender = "hydra@6xr.de";
   services.hydra.useSubstitutes = true;
 
