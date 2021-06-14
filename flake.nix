@@ -74,7 +74,6 @@
         imports = [ (digga.lib.importers.hosts ./hosts) ];
         hosts = {
           /* set host specific properties here */
-          # NixOS = { };
           "sixr" = { };
         };
         importables = rec {
@@ -82,7 +81,7 @@
             users = digga.lib.importers.rakeLeaves ./users;
           };
           suites = with profiles; rec {
-            base = [ core users.nixos users.coafin users.root ];
+            base = [ core users.coafin users.root ];
           };
           ssh-keys = import ./ssh-keys.nix;
         };
