@@ -26,7 +26,7 @@
 
   users.users.coafin = {
     uid = 1000;
-    hashedPassword = (import ../../secrets/users/coafin/hashedPasswords.nix).userHashedPassword;
+    hashedPassword = "$6$pgvsud88T$b8Q0DxEcgD7rc1LhoB7AK1qvTBPtZe69FVK6a6kyz4taT42L9YmldYWbPLdQhJY1yM4yQjqDKhofWHkXAsgZK/";
     description = "default";
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" "tty" "dialout" ];

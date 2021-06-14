@@ -28,7 +28,7 @@
         simple = {
           enable_basic_auth = true;
           users = {
-            coafin = (import "${self}/secrets/users/coafin/hashedPasswords.nix").nginxSSOHashedPassword;
+            coafin = "$2y$10$PFnkQT7DLUtIiACVMhqJo.lsrv7dtX2NTJBFV/g4xyNnTdEY1ulsu";
           };
           groups = {
             admins = [ "coafin" ];
