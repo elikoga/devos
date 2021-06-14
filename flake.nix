@@ -82,7 +82,7 @@
             users = digga.lib.importers.rakeLeaves ./users;
           };
           suites = with profiles; rec {
-            base = [ core users.coafin users.root ];
+            base = [ core users.nixos users.coafin users.root ];
           };
           ssh-keys = import ./ssh-keys.nix;
         };
