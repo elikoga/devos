@@ -140,8 +140,9 @@
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "naersk": {
@@ -210,9 +211,10 @@
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
+        "owner": "NixOS",
         "ref": "nixos-unstable",
-        "type": "indirect"
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "nixos-hardware": {
@@ -263,15 +265,17 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1623186599,
-        "narHash": "sha256-cNOs2EAWnIV3w8Fu/gKjZEf9Fev+O2sWRzVpgs/trYg=",
-        "path": "/nix/store/sl517d244yp1i3h1p41cshjhdsfaw1d2-source",
-        "rev": "9415f3db95026450ca456e6c29f1886bc8e205cb",
-        "type": "path"
+        "lastModified": 1623678822,
+        "narHash": "sha256-jipSMjsvAD1ytTEY7OGL1v6/JkVsvenjKP601JRou74=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "4028c1fc35f60ab0eda7b763b9718a013ab593f3",
+        "type": "github"
       },
       "original": {
-        "id": "nur",
-        "type": "indirect"
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
       }
     },
     "pkgs": {

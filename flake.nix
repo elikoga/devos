@@ -3,10 +3,10 @@
 
   inputs =
     {
-      nixos.url = "nixpkgs/nixos-unstable";
-      latest.url = "nixpkgs";
+      nixos.url = "github:NixOS/nixpkgs/nixos-unstable";
+      latest.url = "github:NixOS/nixpkgs";
       digga.url = "github:divnix/digga/master";
-
+      nur.url = "github:nix-community/NUR";
       home.url = "github:nix-community/home-manager";
       home.inputs.nixpkgs.follows = "nixos";
       naersk.url = "github:nmattia/naersk";
