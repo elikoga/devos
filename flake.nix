@@ -24,7 +24,6 @@
     , pkgs
     , digga
     , nixos
-    , ci-agent
     , home
     , nixos-hardware
     , nur
