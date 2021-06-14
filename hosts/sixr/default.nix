@@ -17,7 +17,7 @@
   networking.interfaces.ens18.useDHCP = true;
 
   services.hydra.enable = true;
-  services.hydra.hydraURL = "6xr.de/hydra";
+  services.hydra.hydraURL = "https://6xr.de/hydra";
   services.hydra.notificationSender = "hydra@6xr.de";
   services.hydra.useSubstitutes = true;
 
